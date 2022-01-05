@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<title> Practice JS</title>
+<head>
+
+</head>
+
+<body>
+    <button id="change-bg"> Change Color/ Event Listeners </button>
+
+
+    <!-- Key Down Listeners -->
+    <label> Key Down Input Field</label>
+    <input id="textBox" type="text"></input>
+
+    <!-- Form Validation -->
+    <form>
+        <div>
+          <label for="fname">First name: </label>
+          <input id="fname" type="text">
+        </div>
+        <div>
+          <label for="lname">Last name: </label>
+          <input id="lname" type="text">
+        </div>
+        <div>
+           <input id="submit" type="submit">
+        </div>
+      </form>
+    <div id="output"></div>
+    <p></p>
+
+
+    <button onclick="showCookies()">Show cookies</button>
+
+    <button onclick="clearOutputCookies()">
+        Clear Cookies
+    </button>
+
+    <div>
+    <code id="cookies"></code>
+    </div>
+    <script>
+        // Event Listeners
+        let btn = document.querySelector('#change-bg')
+        
+        function randomVal(number) {
+            return Math.floor(Math.random() * (number+1));
+        }
+        // Change the background color with random created RGB
+        btn.addEventListener('click', () => {
+            const rndCol = `rgb(${randomVal(255)}, ${randomVal(255)}, ${randomVal(255)})`;
+            document.body.style.backgroundColor = rndCol;
+        });
+
+        const textBox = document.querySelector("#textBox");
+        const output = document.querySelector("#output");
+        textBox.addEventListener('keydown', event => output.textContent = `You pressed "${event.key}".`);
+
+
+        // Form Validation
+
+        const form = document.querySelector('form');
+        const fname = document.getElementById('fname');
+        const lname = document.getElementById('lname');
+        const para = document.querySelector('p');
+
+        form.addEventListener('submit', e => {
+        if (fname.value === '' || lname.value === '') {
+            e.preventDefault();
+            para.textContent = 'You need to fill in both names!';
+        }
+        });
+
+
+        // Use of Cookies
+
+        document.cookie = "name=oeschger; SameSite=None; Secure";
+        document.cookie = "favorite_food=tripe; SameSite=None; Secure";
+
+        // Show Cookies
+        function showCookies() {
+            const output = document.getElementById('cookies')
+            output.textContent = '> ' + document.cookie
+        }
+
+        // Clear Cookies
+        function clearOutputCookies() {
+            const output = document.getElementById('cookies')
+            output.textContent = ''
+        }
+
+        // Prompt
+        let userName = prompt("Your name?", "Alice");
+        
+        //Confirm Modal
+        let isTeaWanted = confirm("Do you want some tea?");
+
+        // Alert
+        alert( "Visitor: " + userName ); // Alice
+        alert( "Tea wanted: " + isTeaWanted ); // true
+
+
+        // Variables , string manipulations
+        let doh = "Doh";
+        console.log(typeof doh.toUpperCase);
+        // → function
+        console.log(doh.toUpperCase());
+
+        // Arrays Manipulations
+        let sequence = [1, 2, 3];
+        sequence.push(4);
+        sequence.push(5);
+        console.log(sequence);
+        // → [1, 2, 3, 4, 5]
+        console.log(sequence.pop());
+        // → 5
+        console.log(sequence);
+        // → [1, 2, 3, 4]
+
+        
+    </script>
+</body>
+</html>

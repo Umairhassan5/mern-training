@@ -117,7 +117,27 @@
         console.log(sequence);
         // → [1, 2, 3, 4]
 
-        
+        // Spread Operators Arrays Push and reserve the users array same
+
+        const users = [
+            {id: 1, name: 'Ben'},
+            {id: 2, name: 'Leslie'},
+        ]
+        const updatedUsers = [...users, newUser]
+
+        console.log(users)
+        console.log(updatedUsers)
+
+        // Spread operators arrays pop and reserve the original array same
+
+        const originalArray = ['one', 'two', 'three']
+
+        // Assign Array to another variable
+        const secondArray = [...originalArray]
+        console.log(secondArray)
+
+        // Convert set into an array
+
     </script>
 </body>
 </html>

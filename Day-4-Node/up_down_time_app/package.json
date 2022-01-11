@@ -1,0 +1,21 @@
+{
+  "name": "up_down_time",
+  "version": "0.1.0",
+  "description": "This app will tell when pc lid up or down time with notifications.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Umair",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "pg": "^8.7.1"
+  }
+}
